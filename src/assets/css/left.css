@@ -1,0 +1,351 @@
+.labelDiv {
+  border: 1px solid #fff;
+  padding: 0 10px;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.18);
+}
+.aOne {
+	padding: 15px;
+	height: 170px;
+	background-color: #fff;
+	box-shadow: 0px 6px 12px rgba(0,0,0,0.18);
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.ecLine {
+	width: 220px;
+	height: 100%;
+}
+.aTwo {
+	padding: 15px;
+	background-color: #fff;
+	box-shadow: 0px 6px 12px rgba(0,0,0,0.18);
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.aThree {
+	background-color: #fff;
+	box-shadow: 0px 6px 12px rgba(0,0,0,0.18);
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.aOne:last-child {
+	margin-bottom: 0px;
+}
+.ecTitle {
+	font-size: 14px;
+	color: #001529;
+	letter-spacing: -0.02px;
+	font-weight: 550;
+	margin-bottom: 10px;
+}	
+.ecTitle2 {
+	font-size: 14px;
+	font-weight: 700;
+	color: #333;
+	font-weight: 550;
+	letter-spacing: 1.2px;
+}
+.ecNum {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: -0.01px;
+	margin-top: 10px;
+}
+.ecData {
+	margin-top: 10px;
+	font-size: 12px;
+	color: rgba(0,21,41,.7);
+}
+.ecData span {
+}
+.ecData span:nth-child(1) {
+	margin-right: 10px;
+}
+.eccc {
+	display: flex;
+}
+.eccDatas {
+	flex: 1;
+}
+.eccData > div:nth-child(1) {
+	font-size: 12px;
+	color: rgba(0,21,41,.7);
+	letter-spacing: -0.01px;
+}
+.eccData > div:nth-child(2) {
+	font-size: 14px;
+	font-weight: 700;
+	color: #333;
+}
+.eccData > div > span{
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+}
+.eccData > div:nth-child(1) > span {
+	background-color: rgba(24,144,255,1);
+}
+.eccData:nth-child(2) > div:nth-child(1) > span {
+	background-color: rgba(66,195,129,1);
+}
+.legendd {
+	display: flex;	
+	line-height: 20px;	
+}	
+.legendd > div:nth-child(1) {
+	flex: 1;
+	/* max-width:160px; */
+	min-height:0px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	color: #888;
+}	
+.legendd > div:nth-child(2) {
+	text-align: right;
+	display: flex;
+	/* max-width: 120px; */
+	/* min-width: 40px; */
+}
+.legendd > div:nth-child(1) > span {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+}
+.legendd > div:nth-child(2) > .ssColor1{
+	font-size: 12px;
+	font-weight: 700;
+}
+.legendd > div:nth-child(2) > .ssColor{
+	font-size: 12px;
+	font-weight: 700;
+	width:56px;
+}
+.huanbi {
+	position:relative;
+}
+.huanbiSpan {
+	position:absolute;
+	top: -13px;
+	right: 2px;
+	font-size: 10px;
+	color: #888;
+}
+.legendd .red {
+	color: rgba(218,84,66);
+	margin-right: 0px;
+}
+.legendd .green {
+	color: rgba(66,195,129);
+}
+.black {
+
+}
+.nuit {
+	font-size: 14px;
+	font-weight: 700;
+}
+.nuit span {
+	font-size: 12px;
+}
+
+.rightSpan {
+	float: right;
+	color: #888;
+	font-size: 12px;
+	font-weight: 200;
+	line-height: 19px;
+}
+
+
+
+.taskApproval .el-table--enable-row-transition .el-table__body td:nth-child(2)>div,
+.taskApproval .el-table--enable-row-transition .el-table__body td:nth-child(3)>div,
+.taskApproval .el-table--enable-row-transition .el-table__body td:nth-child(4)>div{
+	display: block;
+	max-width: 220px;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow: hidden;
+}
+
+
+.taskApproval .el-table thead>tr>th{
+	border-top: 1px solid #EBEEF5;
+	background-color: #fafafa;
+}
+.taskApproval .el-table thead>tr>th:first-child{
+	border-left: 1px solid #EBEEF5;
+}
+.taskApproval .el-table thead>tr>th:nth-child(8){
+	border-right: 1px solid #EBEEF5;
+}
+
+.taskApproval .el-dialog__body{
+	padding: 20px 40px;
+}
+.taskApproval .el-icon-close:before{
+	font-size: 25px;
+	font-weight: bold;
+}
+.taskApproval .el-dialog__headerbtn{
+	top:15px;
+	right: 15px;
+}
+
+.activeCreate input::-webkit-outer-spin-button,
+.activeCreate input::-webkit-inner-spin-button{
+	-webkit-appearance: none !important;
+}
+.activeCreate input[type='number']{
+	-moz-appearance: textfield;
+}
+.myAssessment .el-divider--horizontal{
+	margin: 10px 0;
+}
+
+.myAssessment .leftcontent>.leftlist .el-table th.is-leaf{
+	background-color: #f3f3f3;
+}
+/*.myAssessment .leftcontent>.leftlist .el-table tr>td:nth-child(3)>div,
+.myAssessment .leftcontent>.leftlist .el-table tr>td:nth-child(4)>div,
+.myAssessment .leftcontent>.leftlist .el-table tr>td:nth-child(5)>div,
+.myAssessment .leftcontent>.leftlist .el-table tr>td:nth-child(6)>div,
+.myAssessment .leftcontent>.leftlist .el-table tr>th:nth-child(3)>div,
+.myAssessment .leftcontent>.leftlist .el-table tr>th:nth-child(4)>div,
+.myAssessment .leftcontent>.leftlist .el-table tr>th:nth-child(5)>div,
+.myAssessment .leftcontent>.leftlist .el-table tr>th:nth-child(6)>div{
+	text-align: center;
+}*/
+.myAssessment .tablecontent .el-row{
+	height: 100%;
+}
+.myAssessment .leftcontent .el-table{
+	height:95% !important; 
+}
+.myAssessment .rightcontent .el-table{
+	height: 98% !important;
+}
+.myAssessment .tablecontent .el-row .el-col-16,
+.myAssessment .tablecontent .el-row .el-col-8{
+	height: 100%;
+}
+.myAssessment .el-table th,
+.myAssessment .el-table td{
+	font-size: 12px;
+}
+.myAssessment .leftcontent .el-table .cell, .el-table th div,
+.myAssessment .leftcontent .el-table .cell, .el-table td div{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.myAssessment .rightcontent .el-table .cell, .el-table th div{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.myAssessment .rightcontent .el-table .cell div{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+.myAssessment .rightcontent .el-table th,
+.myAssessment .rightcontent .el-table td{
+	text-align: center;
+}
+.myAssessment .rightcontent .pmlist .el-table__body-wrapper::-webkit-scrollbar,
+.myAssessment .rightcontent .rightlist .el-table__body-wrapper::-webkit-scrollbar,
+.myAssessment .leftcontent .leftlist .el-table__body-wrapper::-webkit-scrollbar{
+	width: 4px;
+	background: #EBEEF5;
+	/*display: none;*/
+}
+.myAssessment .leftcontent .leftlist th.gutter{
+	background: #f3f3f3;
+}
+.myAssessment .rightcontent .pmlist .el-table__body-wrapper::-webkit-scrollbar-thumb,
+.myAssessment .rightcontent .rightlist .el-table__body-wrapper::-webkit-scrollbar-thumb,
+.myAssessment .leftcontent .leftlist .el-table__body-wrapper::-webkit-scrollbar-thumb{
+	border-radius: 3px;
+	background: #ccc;
+	height: 120px;
+}
+.myAssessment .rightcontent .pmlist .el-table__body-wrapper::-webkit-scrollbar-track,
+.myAssessment .rightcontent .rightlist .el-table__body-wrapper::-webkit-scrollbar-track,
+.myAssessment .leftcontent .leftlist .el-table__body-wrapper::-webkit-scrollbar-track{
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	background: rgba(255,255,255,1);
+}
+
+.ssColor {
+	width: 56px;
+}
+
+
+.myAssessment .el-table--scrollable-y .el-table__body-wrapper{
+	height: 85%;
+}
+.myAssessment .el-table__body, .el-table__footer, .el-table__header{
+	width: 100%;
+}
+.myAssessment .el-table__header-wrapper>table{
+	width: 100% !important;
+}
+
+
+.infos .el-collapse-item__header {
+	height: 40px;
+}
+.infos .el-collapse-item__content {
+	padding-bottom: 10px;
+}
+
+.infos .el-collapse-item__header.is-active {
+	color: #1890ff;
+}
+.infos .el-collapse-item__header {
+	display: block;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	padding-right: 20px;
+	min-height: 0;
+	line-height: 35px;
+	position: relative;
+}
+.el-collapse-item__arrow {
+	position: absolute;
+	margin-top: 10px;
+	right: 0;
+}
+.infos .el-collapse-item__content {
+	position: relative;
+}
+.infos .titleName {
+	position: absolute;
+	width: calc(100% - 30px);
+	height: 30px;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.mint-swipe-indicator.is-active {
+	background-color: #3590f2;
+}
+
+/* .sjInfo2 .el-select .el-input__suffix {
+	top: 5px;
+}
+.sjInfo2 .el-date-editor .el-input__suffix{
+	top: -5px;
+}
+.sjInfo2 .el-input__inner {
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+} */
+
+.el-select-dropdown__item {
+	padding-left: 10px;
+	
+}

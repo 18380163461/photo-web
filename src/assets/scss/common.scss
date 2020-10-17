@@ -1,0 +1,27 @@
+$blue: #3490f2;
+$border: solid 1px #ebedf0;
+.green-btn{
+  background-color: #15cb6e;
+  border-radius: 5px;
+
+}
+.van-nav-bar{
+  background: #409eff;
+}
+.van-button--large{
+  height: 46px;
+  line-height: 46px;
+}
+.van-nav-bar__title,.van-nav-bar__text{
+  color: #fff;
+}
+.check-dropddown-title{
+  padding: 0 20px!important;
+}
+.check-search{
+  .van-search__content{
+    background-color: #f1f2f3;
+    border: solid 1px #ddd;
+  }
+}
+
