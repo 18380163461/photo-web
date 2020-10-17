@@ -1,41 +1,50 @@
 <template>
   <div>
-    <h1>AAAAAAAAAAAAA</h1>
-
-    <van-image v-for="(item,index) in fileList" :key="item.absolutePath" class="mydiv"
-               :width="imageWith"
-               :height="imageWith"
-               fit="contain"
-               src="https://img.yzcdn.cn/vant/cat.jpeg"
-               @click="clickImage(index)"
+    <van-nav-bar
+      :title="path" left-text="选择" @click-left="onClickLeft" fixed="true"
     />
-    <van-image-preview v-model="show" :images="images" :startPosition="startPosition" @change="onChange" closeable="true">
+
+    <van-grid square>
+      <van-grid-item v-for="(item,index) in fileList" :key="item.absolutePath">
+        <van-image
+          :width="imageWith"
+          :height="imageWith"
+          fit="cover"
+          :src="encodeURI(baseURL+'photo/downloadThumbnail?path='+item.absolutePath)"
+          @click="clickImage(index)"
+        />
+      </van-grid-item>
+    </van-grid>
+
+    <van-image-preview v-model="show" :images="images" :startPosition="startPosition" @change="onChange" closeable="true" className="AAA">
     </van-image-preview>
+
   </div>
 </template>
+import config from '../../api/config';
 
 <script>
+  import config from "../../api/config";
+
   export default {
     name: "PhotoList",
     data() {
       return {
         clientWidth: '',
         imageWith: '',
-        path: 'D:\\1资料\\壁纸\\ui_loading',
+        path: 'D:\\1资料\\111111',
         fileList: [],
         show: false,
         imageIndex: 0,
-        images: [
-          'https://img.yzcdn.cn/vant/apple-1.jpg',
-          'https://img.yzcdn.cn/vant/apple-2.jpg',
-        ],
+        images: [],
         startPosition: 0,
         closeable: true,
+        baseURL: '',
       }
     },
     computed: {},
     mounted() {
-      debugger
+      this.baseURL = config.baseURL;
       this.clientWidth = document.documentElement.clientWidth - 40;
       this.imageWith = this.clientWidth / 4;
       this.folders();
@@ -57,6 +66,10 @@
           console.log(res);
           if (res.success) {
             that.fileList = res.result;
+            that.images = [];
+            that.fileList.forEach(function (element) {
+              that.images.push(encodeURI(that.baseURL + 'photo/download?path=' + element.absolutePath))
+            });
           }
         })
       },
@@ -66,16 +79,11 @@
       clickImage(index) {
         this.startPosition = index;
         this.show = true;
-      }
+      },
+      onClickLeft() {
+      },
 
     }
   }
 </script>
-<style>
-  .mydiv {
-    justify-content: flex-start | flex-end | center | space-between | space-around;
-    margin: 0.3rem;
-  }
-
-</style>
 

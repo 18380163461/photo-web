@@ -9,6 +9,7 @@ class API {
     folders: 'photo/folders',
     files: 'photo/files',
     download: 'photo/download',
+    downloadThumbnail: 'photo/downloadThumbnail',
   }
   get = function (url, param) {
     let params = param || {};
