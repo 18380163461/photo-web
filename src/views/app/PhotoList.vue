@@ -2,14 +2,14 @@
   <div>
     <h1>AAAAAAAAAAAAA</h1>
 
-    <van-image v-for="item in fileList" :key="item.absolutePath" class="mydiv"
+    <van-image v-for="(item,index) in fileList" :key="item.absolutePath" class="mydiv"
                :width="imageWith"
                :height="imageWith"
                fit="contain"
                src="https://img.yzcdn.cn/vant/cat.jpeg"
+               @click="clickImage(index)"
     />
-    <van-image-preview v-model="show" :images="images" @change="onChange">
-      <template v-slot:index>第{{ index }}页</template>
+    <van-image-preview v-model="show" :images="images" :startPosition="startPosition" @change="onChange" closeable="true">
     </van-image-preview>
   </div>
 </template>
@@ -24,11 +24,13 @@
         path: 'D:\\1资料\\壁纸\\ui_loading',
         fileList: [],
         show: false,
-        index: 0,
+        imageIndex: 0,
         images: [
           'https://img.yzcdn.cn/vant/apple-1.jpg',
           'https://img.yzcdn.cn/vant/apple-2.jpg',
         ],
+        startPosition: 0,
+        closeable: true,
       }
     },
     computed: {},
@@ -61,6 +63,10 @@
       onChange(index) {
         this.index = index;
       },
+      clickImage(index) {
+        this.startPosition = index;
+        this.show = true;
+      }
 
     }
   }

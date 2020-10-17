@@ -25,7 +25,7 @@
     "less-loader": "^5.0.0",
     "mcrm-jsapi": "0.0.98",
     "mockjs": "^1.0.1-beta3",
-    "vant": "^2.2.13",
+    "vant": "^2.10.9",
     "vue": "^2.5.2",
     "vue-baidu-map": "^0.21.22",
     "vue-fragment": "^1.5.1",
