@@ -1,13 +1,10 @@
 <template>
   <div>
-    <van-nav-bar
-      :title="path" left-text="选择" @click-left="onClickLeft" fixed="true"
+    <van-nav-bar ref="navbar"
+                 :title="path" left-text="选择" @click-left="onClickLeft" fixed="true"
     />
-    <van-popup v-model="showPicker" round position="bottom">
-      <van-picker show-toolbar title="标题" :columns="columns" @cancel="showPicker = false" @confirm="onConfirm"/>
-    </van-popup>
 
-    <van-grid square>
+    <van-grid square style="margin-top: 4rem">
       <van-grid-item v-for="(item,index) in fileList" :key="item.absolutePath">
         <van-image
           :width="imageWith"
@@ -19,10 +16,13 @@
       </van-grid-item>
     </van-grid>
 
+
     <van-image-preview v-model="show" :images="images" :startPosition="startPosition" @change="onChange" closeable="true" className="AAA">
     </van-image-preview>
 
-
+    <van-popup v-model="showPicker" round position="bottom">
+      <van-picker show-toolbar title="标题" :columns="columns" @cancel="showPicker = false" @confirm="onConfirm"/>
+    </van-popup>
   </div>
 </template>
 import config from '../../api/config';
@@ -35,6 +35,7 @@ import config from '../../api/config';
     data() {
       return {
         clientWidth: '',
+        wrapHeight: '',
         imageWith: '',
         path: '请选择路径',
         fileList: [],
