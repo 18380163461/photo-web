@@ -3,6 +3,9 @@
     <van-nav-bar
       :title="path" left-text="选择" @click-left="onClickLeft" fixed="true"
     />
+    <van-popup v-model="showPicker" round position="bottom">
+      <van-picker show-toolbar title="标题" :columns="columns" @cancel="showPicker = false" @confirm="onConfirm"/>
+    </van-popup>
 
     <van-grid square>
       <van-grid-item v-for="(item,index) in fileList" :key="item.absolutePath">
@@ -19,6 +22,7 @@
     <van-image-preview v-model="show" :images="images" :startPosition="startPosition" @change="onChange" closeable="true" className="AAA">
     </van-image-preview>
 
+
   </div>
 </template>
 import config from '../../api/config';
@@ -32,7 +36,7 @@ import config from '../../api/config';
       return {
         clientWidth: '',
         imageWith: '',
-        path: 'D:\\1资料\\111111',
+        path: '请选择路径',
         fileList: [],
         show: false,
         imageIndex: 0,
@@ -40,6 +44,9 @@ import config from '../../api/config';
         startPosition: 0,
         closeable: true,
         baseURL: '',
+        showPicker: false,
+        columns: [],
+        rootPath: '',
       }
     },
     computed: {},
@@ -48,20 +55,21 @@ import config from '../../api/config';
       this.clientWidth = document.documentElement.clientWidth - 40;
       this.imageWith = this.clientWidth / 4;
       this.folders();
-      this.files();
     },
     methods: {
       folders() {
-        this.$fetch(this.$api.url.folders, {
-          collectId: this.collectId
-        }).then(res => {
-          console.log(res);
+        let that = this;
+        this.$fetch(this.$api.url.folders2, {}).then(res => {
+          if (res.success) {
+            that.columns = res.result;
+            that.rootPath = res.info;
+          }
         })
       },
-      files() {
+      files(path) {
         let that = this;
         this.$fetch(this.$api.url.files, {
-          path: that.path
+          path: path
         }).then(res => {
           console.log(res);
           if (res.success) {
@@ -81,6 +89,14 @@ import config from '../../api/config';
         this.show = true;
       },
       onClickLeft() {
+        this.showPicker = !this.showPicker;
+      },
+      onConfirm(value) {
+        this.fileList = [];
+        this.images = [];
+        this.path = value[0] + "/" + value[1];
+        this.showPicker = false;
+        this.files(this.rootPath + "/" + this.path);
       },
 
     }

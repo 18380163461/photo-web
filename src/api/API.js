@@ -7,6 +7,7 @@ class API {
   baseURL = config.baseURL;
   url = {
     folders: 'photo/folders',
+    folders2: 'photo/folders2',
     files: 'photo/files',
     download: 'photo/download',
     downloadThumbnail: 'photo/downloadThumbnail',
